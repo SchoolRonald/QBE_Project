@@ -39,7 +39,7 @@
         <li>
           {#if link.external}
             <a
-              href={link.href}
+              href={link.id}
               target="_blank"
               rel="noopener noreferrer"
               on:click={closeMenu}
@@ -48,9 +48,9 @@
             </a>
           {:else}
             <a
-              href={link.href}
-              class:active={$router === link.href}
-              on:click|preventDefault={() => navTo(link.href)}
+              href={link.id}
+              class:active={$router === link.id}
+              on:click|preventDefault={() => navTo(link.id)}
             >
               {link.label}
             </a>

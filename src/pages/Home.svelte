@@ -1,47 +1,49 @@
 <script>
-  import { APP_CONFIG, ROUTES, EXTERNAL_LINKS } from '../config/constants.js'
+  import { ROUTES } from '../config/constants.js'
 </script>
 
 <section class="hero page-shell">
   <div class="hero-grid surface-card">
     <div class="hero-text">
-      <span class="badge hero-badge">Colorado School of Mines</span>
-      <h1>{APP_CONFIG.clubName}</h1>
-      <p class="lead">Empowering students to explore artificial intelligence and machine learning through hands-on workshops, collaborative projects, and industry connections.</p>
+      <span class="badge hero-badge">QBE Project</span>
+      <h1>Lac Operon Learning Hub</h1>
+      <p class="lead">
+        An interactive site that explains how the lac operon works, from basic biology
+        to computational models and visualizations of gene regulation.
+      </p>
 
       <div class="cta-row">
-        <a class="btn primary" href={ROUTES.EVENTS}>
-          <span>Upcoming Events</span>
+        <a class="btn primary" href={ROUTES.BACKGROUND}>
+          <span>Start with Background</span>
           <span class="arrow">→</span>
         </a>
-        <a class="btn secondary" href={ROUTES.CONTACT}>Contact Us</a>
-        <a
-          class="btn tertiary"
-          href={EXTERNAL_LINKS.ORECONNECT}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          OreConnect Portal ↗
+        <a class="btn secondary" href={ROUTES.MODEL}>
+          Model Overview
+        </a>
+        <a class="btn secondary" href={ROUTES.VISUALIZATION}>
+          Model Visualization
+        </a>
+        <a class="btn tertiary" href={ROUTES.CONTACT}>
+          Contact / Team
         </a>
       </div>
 
       <div class="stats-row">
         <div class="stat-card">
-          <div class="value">130+</div>
-          <div class="label">Active Members</div>
+          <div class="value">1</div>
+          <div class="label">Operon, Many States</div>
         </div>
         <div class="stat-card">
-          <div class="value">18</div>
-          <div class="label">Workshops / yr</div>
+          <div class="value">3</div>
+          <div class="label">Core Genes (lacZYA)</div>
         </div>
         <div class="stat-card">
-          <div class="value">12</div>
-          <div class="label">Projects Shipped</div>
+          <div class="value">∞</div>
+          <div class="label">Learning Questions</div>
         </div>
       </div>
     </div>
 
-    <!-- Centered Logo Design -->
     <div class="logo-column">
       <div class="logo-showcase">
         <div class="circuit-lines">
@@ -52,7 +54,11 @@
         </div>
         <div class="logo-container">
           <div class="logo-glow"></div>
-          <img src="/src/assets/club-logo.jpg" alt="Colorado School of Mines AI/ML Club Logo" class="hero-logo" />
+          <img
+            src="/src/assets/club-logo.jpg"
+            alt="QBE Lac Operon Project"
+            class="hero-logo"
+          />
         </div>
       </div>
     </div>
@@ -60,34 +66,46 @@
 
   <div class="features">
     <div class="feature-card surface-card">
-      <img src="/src/assets/training.jpg" alt="AI/ML Training" class="feature-image" />
+      <img src="/src/assets/training.jpg" alt="Biology Background" class="feature-image" />
       <div class="feature-content">
-        <h3>Workshops & Training</h3>
-        <p>Regular hands-on workshops covering machine learning fundamentals, deep learning frameworks, and cutting-edge AI techniques.</p>
+        <h3>Biological Background</h3>
+        <p>
+          Walk through the structure of the lac operon, its genes, and the key
+          molecules that turn transcription on and off.
+        </p>
       </div>
     </div>
 
     <div class="feature-card surface-card">
-      <img src="/src/assets/competition.jpg" alt="AI/ML Projects" class="feature-image" />
+      <img src="/src/assets/competition.jpg" alt="Lac Operon Models" class="feature-image" />
       <div class="feature-content">
-        <h3>Collaborative Projects</h3>
-        <p>Work on real-world machine learning projects, participate in competitions, and build your portfolio with guidance from experienced mentors.</p>
+        <h3>Computational Model</h3>
+        <p>
+          See how the lac operon can be described with logical rules or quantitative
+          models that connect inputs to gene expression.
+        </p>
       </div>
     </div>
 
     <div class="feature-card surface-card">
-      <img src="/src/assets/networking.jpg" alt="Industry Connections" class="feature-image" />
+      <img src="/src/assets/networking.jpg" alt="Interactive Visualizations" class="feature-image" />
       <div class="feature-content">
-        <h3>Industry Connections</h3>
-        <p>Network with professionals, attend guest lectures, and explore career opportunities in AI and machine learning.</p>
+        <h3>Interactive Visualization</h3>
+        <p>
+          Explore scenarios such as “no lactose”, “lactose present”, and
+          “mutations” using interactive diagrams and state visualizations.
+        </p>
       </div>
     </div>
   </div>
 
   <div class="mission-section surface-card">
-    <h2>Our Mission</h2>
+    <h2>Project Aim</h2>
     <p class="mission-text">
-      Artificial Intelligence and Machine Learning Club aims to foster a collaborative environment for students interested in the vast domain of machine learning. The club seeks to promote understanding, research, and application of machine learning concepts. AI/ML at Mines strives to provide resources, mentorship, workshops, competitions, and projects to help members learn about artificial intelligence and machine learning techniques, ethics, and advancements. It's a platform for sharing knowledge, collaborating on projects, and staying updated with the latest breakthroughs.
+      This QBE project uses the lac operon as a concrete example of bacterial gene
+      regulation. The goal is to connect molecular biology, mathematical modeling,
+      and interactive visualization so that students can experiment with different
+      conditions and immediately see their effects on gene expression.
     </p>
   </div>
 </section>
@@ -108,13 +126,13 @@
 
   .hero-text {
     text-align: left;
+    max-width: 560px;
   }
 
   .hero-badge {
     margin-bottom: 1.25rem;
   }
 
-  /* Logo Showcase Section */
   .logo-column {
     display: flex;
     justify-content: center;
@@ -221,7 +239,7 @@
     height: auto;
     display: block;
     border-radius: 20px;
-    box-shadow: 
+    box-shadow:
       0 10px 40px rgba(0, 0, 0, 0.5),
       0 0 60px var(--accent-subtle),
       0 0 100px rgba(0, 206, 209, 0.1);
@@ -231,16 +249,12 @@
 
   .hero-logo:hover {
     transform: scale(1.02);
-    box-shadow: 
+    box-shadow:
       0 15px 50px rgba(0, 0, 0, 0.6),
       0 0 80px var(--accent-subtle),
       0 0 120px rgba(0, 206, 209, 0.15);
   }
 
-  .hero-text {
-    max-width: 560px;
-  }
-  
   h1 {
     font-size: 3.5rem;
     font-weight: 800;
@@ -248,22 +262,22 @@
     margin: 0 0 1.5rem;
     color: var(--text-bright);
   }
-  
+
   .lead {
     color: var(--muted);
     font-size: 1.15rem;
     line-height: 1.8;
     margin-bottom: 2.5rem;
   }
-  
+
   .cta-row {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
   }
-  
+
   .btn {
-    padding: 1rem 2rem;
+    padding: 1rem 1.4rem;
     border-radius: 12px;
     font-weight: 600;
     font-size: 1.05rem;
@@ -290,43 +304,55 @@
   .btn:hover::before {
     left: 100%;
   }
-  
+
   .primary {
     background: linear-gradient(135deg, var(--accent-bright), var(--accent));
     color: #0A1628;
-    box-shadow: 
+    box-shadow:
       0 4px 15px var(--accent-subtle),
       0 0 30px rgba(212, 175, 55, 0.2);
     border: 1px solid var(--accent-bright);
   }
-  
+
   .primary:hover {
     transform: translateY(-3px);
-    box-shadow: 
+    box-shadow:
       0 8px 25px var(--accent-subtle),
       0 0 50px rgba(212, 175, 55, 0.3);
   }
-  
+
   .primary .arrow {
     transition: transform 0.3s;
   }
-  
+
   .primary:hover .arrow {
     transform: translateX(5px);
   }
-  
+
   .secondary {
     background: transparent;
     color: var(--cyan-bright);
     border: 2px solid var(--border-cyan);
   }
-  
+
   .secondary:hover {
     background: var(--cyan-subtle);
     border-color: var(--cyan-bright);
     box-shadow: 0 0 20px var(--cyan-subtle);
   }
-  
+
+  .tertiary {
+    background: transparent;
+    color: var(--accent-bright);
+    border: 2px solid var(--border-accent);
+  }
+
+  .tertiary:hover {
+    background: var(--accent-subtle);
+    border-color: var(--accent-bright);
+    box-shadow: 0 0 20px var(--accent-subtle);
+  }
+
   .stats-row {
     margin-top: 2.5rem;
     display: grid;
@@ -348,7 +374,7 @@
     line-height: 1.1;
   }
 
-  .label {
+    .label {
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-size: 0.75rem;
@@ -441,7 +467,7 @@
       font-size: 2.9rem;
     }
   }
-  
+
   @media (max-width: 600px) {
     .hero {
       padding: 1.5rem 0;
@@ -454,19 +480,19 @@
     .logo-showcase {
       width: 100%;
     }
-    
+
     h1 {
       font-size: 2.4rem;
     }
-    
+
     .lead {
       font-size: 1rem;
     }
-    
+
     .cta-row {
       flex-direction: column;
     }
-    
+
     .btn {
       width: 100%;
       justify-content: center;

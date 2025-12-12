@@ -3,29 +3,33 @@
  */
 
 export const APP_CONFIG = {
-  clubName: 'Mines AI & ML Club',
+  clubName: 'GRÖNSPRÖT',
   schoolName: 'Colorado School of Mines',
   schoolWebsite: 'https://mines.edu',
   logo: '/src/assets/club-logo.jpg',
 }
 
 export const ROUTES = {
-  HOME: '#home',
-  EVENTS: '#events',
-  PROJECTS: '#projects',
-  CONTACT: '#contact'
-}
+  HOME: '#/home',
+  BACKGROUND: '#/background',
+  MODEL: '#/model',
+  VISUALIZATION: '#/visualization',
+  CONTACT: '#/contact'
+};
+
 
 export const EXTERNAL_LINKS = {
   ORECONNECT: 'https://oreconnect.mines.edu/feeds?type=club&type_id=67510&tab=about'
 }
 
 export const NAV_LINKS = [
-  { label: 'Home', href: ROUTES.HOME },
-  { label: 'Events', href: ROUTES.EVENTS },
-  { label: 'Projects', href: ROUTES.PROJECTS },
-  { label: 'Contact', href: ROUTES.CONTACT }
-]
+  { id: ROUTES.HOME, label: 'Home' },
+  { id: ROUTES.BACKGROUND, label: 'Background' },
+  { id: ROUTES.MODEL, label: 'Model' },
+  { id: ROUTES.VISUALIZATION, label: 'Model Visualization' },
+  { id: ROUTES.CONTACT, label: 'Contact' }
+];
+
 
 export const BREAKPOINTS = {
   mobile: 700,

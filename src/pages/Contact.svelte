@@ -1,61 +1,86 @@
 <script>
-  import PageHeader from '../components/PageHeader.svelte'
-  import SectionHeader from '../components/SectionHeader.svelte'
-  import PersonCard from '../components/PersonCard.svelte'
-  import people from '../data/people.json'
-  
-  const { leadership, advisors, officers } = people
+  import PageHeader from '../components/PageHeader.svelte';
+
+  const teammates = [
+    { name: 'Paul Jacobsen',   major: 'QBE', email: 'pjacobsen@mines.edu' },
+    { name: 'Ronald Chu', major: 'QBE and CS', email: 'rchu@mines.edu' },
+    { name: 'Camille Anderson', major: 'QBE and Biochemistry', email: 'camille_anderson@mines.edu' },
+    { name: 'Kyle Nguyen',   major: 'QBE Chemical Engineering', email: 'kyle_nguyen@mines.edu' }
+  ];
 </script>
 
-<section class="contact">
-  <PageHeader 
-    title="Contact Us" 
-    subtitle="If you have any questions or want to know more, reach out to one of our club leaders." 
+<section class="page-shell">
+  <PageHeader
+    title="Contact"
+    subtitle="Reach out to the team GRÖNSPRÖT with questions or feedback."
   />
 
-  <div class="section">
-    <SectionHeader title="Club Leadership" showDivider={false} />
+  <div class="content surface-card">
     <div class="grid">
-      {#each leadership as person (person.email || person.name)}
-        <PersonCard {person} />
-      {/each}
-    </div>
-  </div>
-
-  <div class="section">
-    <SectionHeader title="Club Advisors" showDivider={false} />
-    <div class="grid">
-      {#each advisors as person (person.name)}
-        <PersonCard {person} />
-      {/each}
-    </div>
-  </div>
-
-  <div class="section">
-    <SectionHeader title="Officers" showDivider={false} />
-    <div class="grid">
-      {#each officers as person (person.name)}
-        <PersonCard {person} />
+      {#each teammates as person (person.email)}
+        <div class="person-card">
+          <h3>{person.name}</h3>
+          <p class="major">{person.major}</p>
+          <a class="email" href={`mailto:${person.email}`}>{person.email}</a>
+        </div>
       {/each}
     </div>
   </div>
 </section>
 
 <style>
-  .section {
-    margin-bottom: 2.5rem;
-  }
-  
-  .grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: space-evenly;
+  .content {
+    padding: 3rem;
   }
 
-  @media (max-width: 640px) {
-    .grid {
-      gap: 1rem;
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .person-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    transition: all 0.3s ease;
+  }
+
+  .person-card:hover {
+    background: var(--card-hover);
+    border-color: var(--border-accent);
+    transform: translateY(-4px);
+  }
+
+  .person-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-bright);
+  }
+
+  .major {
+    margin: 0 0 0.75rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .email {
+    color: var(--cyan-bright);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+
+  .email:hover {
+    color: var(--accent-bright);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      padding: 1.5rem;
     }
   }
 </style>
