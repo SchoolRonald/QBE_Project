@@ -22,7 +22,7 @@
 <nav class="nav">
   <div class="nav-inner page-shell">
     <button class="brand" on:click={() => navTo(ROUTES.HOME)}>
-      <img src={APP_CONFIG.logo} alt="{APP_CONFIG.clubName} logo" class="logo" />
+      <img src="/QBE_Project/club-logo.jpg" alt="{APP_CONFIG.clubName} logo" class="logo" />
       <div class="brand-text">
         <div class="title">{APP_CONFIG.clubName}</div>
         <div class="subtitle">{APP_CONFIG.schoolName}</div>

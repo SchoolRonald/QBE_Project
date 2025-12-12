@@ -76,7 +76,7 @@
 
       <figure class="figure">
         <div class="placeholder-image">
-          <img src="/src/assets/phase-plane-b-concentration.jpg" alt="Phase plane plot showing B concentration dependence" />
+          <img src="/QBE_Project/phase-plane-b-concentration.jpg" alt="Phase plane plot showing B concentration dependence" />
         </div>
         <figcaption>Phase plane plot demonstrating the critical threshold for β-galactosidase concentration</figcaption>
       </figure>
@@ -102,7 +102,7 @@
 
       <figure class="figure">
         <div class="placeholder-image">
-          <img src="/src/assets/bistability-trajectories.jpg" alt="Bistability plot showing diverging trajectories" />
+          <img src="/QBE_Project/bistability-trajectories.jpg" alt="Bistability plot showing diverging trajectories" />
         </div>
         <figcaption>Time evolution of β-galactosidase concentration from six different initial conditions, demonstrating bistability</figcaption>
       </figure>

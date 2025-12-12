@@ -6,7 +6,7 @@ export const APP_CONFIG = {
   clubName: 'GRÖNSPRÖT',
   schoolName: 'Colorado School of Mines',
   schoolWebsite: 'https://mines.edu',
-  logo: '/src/assets/club-logo.jpg',
+  logo: '/QBE_Project/club-logo.jpg',
 }
 
 export const ROUTES = {

@@ -2,21 +2,16 @@
   import { onMount } from 'svelte';
   import PageHeader from '../components/PageHeader.svelte';
 
-  // prefer the exact path you placed the html file
-  const PREFERRED = '/src/assets/notebooks/project_portfolio.html';
-
-  // additional candidates if needed
+  // ✅ Updated paths for GitHub Pages with base: '/QBE_Project/'
   const CANDIDATES = [
-    PREFERRED,
-    '/notebooks/project_portfolio.html',                 // public/notebooks/
-    '/src/assets/project_portfolio.html',                // alternate
-    '/project_portfolio.html'                            // root (unlikely)
+    'notebooks/project_portfolio.html',    // Resolves to /QBE_Project/notebooks/...
+    '/QBE_Project/notebooks/project_portfolio.html'  // Explicit fallback
   ];
 
   let html = null;
   let tried = false;
   let foundPath = null;
-  let fallbackSrc = null; // direct iframe src fallback
+  let fallbackSrc = null;
 
   async function tryLoad() {
     for (const p of CANDIDATES) {
@@ -32,9 +27,7 @@
       }
     }
 
-    // if fetch didn't succeed, try using direct iframe src to the preferred path
-    // (useful if Vite serves the file but fetch from script is blocked)
-    fallbackSrc = PREFERRED;
+    fallbackSrc = CANDIDATES[0];
     tried = true;
   }
 
@@ -61,15 +54,9 @@
         {#if fallbackSrc}
           <p>Trying direct iframe to: <code>{fallbackSrc}</code></p>
           <iframe class="notebook-frame" src={fallbackSrc} title="Project Portfolio Notebook (direct)" loading="lazy"></iframe>
-          <p class="muted">If the notebook still doesn't appear, move <code>project_portfolio.html</code> to <code>public/notebooks/project_portfolio.html</code> and restart the dev server.</p>
+          <p class="muted">If the notebook still doesn't appear, ensure <code>project_portfolio.html</code> is in <code>public/notebooks/</code>.</p>
         {:else}
-          <p>Recommended: move <code>project_portfolio.html</code> to <code>public/notebooks/project_portfolio.html</code> and restart the dev server.</p>
-          <p>Candidate URLs you can try opening directly in the browser:</p>
-          <ul>
-            {#each CANDIDATES as p}
-              <li><a target="_blank" rel="noopener noreferrer" href={p}>{p}</a></li>
-            {/each}
-          </ul>
+          <p>Recommended: move <code>project_portfolio.html</code> to <code>public/notebooks/project_portfolio.html</code>.</p>
         {/if}
       </div>
     {/if}

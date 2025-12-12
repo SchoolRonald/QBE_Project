@@ -38,7 +38,7 @@
 
       <figure class="figure">
         <div class="placeholder-image">
-          <img src="/src/assets/lac-operon-diagram.jpg" alt="Lac operon structure in E. coli" />
+          <img src="/QBE_Project/lac-operon-diagram.jpg" alt="Lac operon structure in E. coli" />
         </div>
         <figcaption>A representation of the lac operon in <em>E. coli</em></figcaption>
       </figure>

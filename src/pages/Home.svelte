@@ -55,7 +55,7 @@
         <div class="logo-container">
           <div class="logo-glow"></div>
           <img
-            src="/src/assets/club-logo.jpg"
+            src="/QBE_Project/club-logo.jpg"
             alt="QBE Lac Operon Project"
             class="hero-logo"
           />
@@ -66,7 +66,7 @@
 
   <div class="features">
     <div class="feature-card surface-card">
-      <img src="/src/assets/training.jpg" alt="Biology Background" class="feature-image" />
+      <img src="/QBE_Project/training.jpg" alt="Biology Background" class="feature-image" />
       <div class="feature-content">
         <h3>Biological Background</h3>
         <p>
@@ -77,7 +77,7 @@
     </div>
 
     <div class="feature-card surface-card">
-      <img src="/src/assets/competition.jpg" alt="Lac Operon Models" class="feature-image" />
+      <img src="/QBE_Project/competition.jpg" alt="Lac Operon Models" class="feature-image" />
       <div class="feature-content">
         <h3>Computational Model</h3>
         <p>
@@ -88,7 +88,7 @@
     </div>
 
     <div class="feature-card surface-card">
-      <img src="/src/assets/networking.jpg" alt="Interactive Visualizations" class="feature-image" />
+      <img src="/QBE_Project/networking.jpg" alt="Interactive Visualizations" class="feature-image" />
       <div class="feature-content">
         <h3>Interactive Visualization</h3>
         <p>
