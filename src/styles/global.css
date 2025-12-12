@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* CSS Custom Properties */
+:root {
+  /* Logo-Inspired Colors - Gold & Cyan on Deep Navy */
+  --accent: #D4AF37; /* Rich Gold from logo */
+  --accent-dark: #B8941F; /* Darker gold */
+  --accent-bright: #ffb700; /* Bright gold highlight */
+  --accent-subtle: rgba(212, 139, 55, 0.15); /* Gold glow */
+  
+  --cyan: #00CED1; /* Cyan circuit lines */
+  --cyan-bright: #40E0D0; /* Bright cyan */
+  --cyan-subtle: rgba(0, 206, 209, 0.2); /* Cyan glow */
+  
+  --muted: #8B9BB4; /* Slightly warmer gray */
+  --text: #E8F0F8; /* Crisp white-blue */
+  --text-bright: #FFFFFF;
+  --text-secondary: #CAD6EB;
+  
+  /* Backgrounds - Deep Navy/Black from logo */
+  --bg: #0A1628; /* Deep navy black */
+  --bg-gradient-start: #1A2942; /* Navy blue */
+  --bg-gradient-end: #050D1A; /* Near black */
+  --card: #152238; /* Card background */
+  --card-hover: #1F2F4A; /* Card hover state */
+  --card-glass: rgba(14, 24, 46, 0.65);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --shadow-soft: 0 12px 45px rgba(4, 9, 18, 0.45);
+  
+  /* Borders */
+  --border-subtle: rgba(212, 175, 55, 0.08); /* Subtle gold tint */
+  --border-medium: rgba(212, 175, 55, 0.15); /* Medium gold */
+  --border-accent: rgba(212, 175, 55, 0.4); /* Gold accent border */
+  --border-cyan: rgba(0, 206, 209, 0.3); /* Cyan border */
+  
+  /* Backgrounds */
+  --bg-overlay: rgba(212, 175, 55, 0.05); /* Gold overlay */
+  --bg-hover: rgba(212, 175, 55, 0.08); /* Gold hover */
+  
+  /* Typography */
+  font-family: 'Space Grotesk', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Reset and base styles */
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, rgba(6, 20, 41, 0.9), rgba(2, 8, 16, 0.95)), var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.15), transparent 50%),
+    radial-gradient(circle at 80% 0%, rgba(0, 206, 209, 0.18), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.03), transparent 50%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%),
+    linear-gradient(300deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%);
+  background-size: 140px 140px;
+  opacity: 0.15;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: -1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-shell {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.surface-card {
+  background: var(--card-glass);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.surface-card::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-bright);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Utility classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

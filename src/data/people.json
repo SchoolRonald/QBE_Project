@@ -1,0 +1,54 @@
+{
+  "leadership": [
+    {
+      "name": "Ronald Chu",
+      "role": "President",
+      "email": "rchu@mines.edu"
+    },
+    {
+      "name": "Matthew Yamamoto",
+      "role": "Vice President",
+      "email": "matthew_yamamoto@mines.edu"
+    }
+  ],
+  "advisors": [
+    {
+      "name": "Dr. Zibo Wang",
+      "role": "Faculty Advisor",
+      "url": "https://cs.mines.edu/project/wang-zibo/",
+      "image": "/src/assets/zibo_wang.jpg"
+    },
+    {
+      "name": "Dr. Bo Wu",
+      "role": "Faculty Advisor",
+      "url": "https://cs.mines.edu/project/wu-bo/",
+      "image": "/src/assets/bo_wu.jpeg"
+    }
+  ],
+  "officers": [
+    {
+      "name": "Joseph Kenrick",
+      "role": "Director of Strategic Partnerships"
+    },
+    {
+      "name": "Aragorn Wang",
+      "role": "Research Officer"
+    },
+    {
+      "name": "Jonah Reynolds",
+      "role": "Treasurer"
+    },
+    {
+      "name": "Manda Li",
+      "role": "Outreach Chair"
+    },
+    {
+      "name": "Dornu Irene",
+      "role": "Platform Developer"
+    },
+    {
+      "name": "Austin Truhn",
+      "role": "Secretary"
+    }
+  ]
+}

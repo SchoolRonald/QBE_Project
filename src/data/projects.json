@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Neural Network from Scratch",
+    "description": "A simple neural network implemented in Python without any major ML libraries. A great learning exercise!",
+    "members": ["Alex Doe", "Jane Smith"],
+    "technologies": ["Python", "NumPy"],
+    "github_url": "https://github.com/example/nn-from-scratch"
+  },
+  {
+    "title": "Image Classifier for Cats and Dogs",
+    "description": "A convolutional neural network (CNN) built with PyTorch to classify images of cats and dogs. Trained on the Kaggle dataset.",
+    "members": ["John Appleseed", "Emily White"],
+    "technologies": ["PyTorch", "Jupyter Notebook"],
+    "github_url": "https://github.com/example/cat-dog-classifier"
+  },
+  {
+    "title": "Sentiment Analysis of Movie Reviews",
+    "description": "A model that uses natural language processing (NLP) to determine whether a movie review is positive or negative.",
+    "members": ["Michael Johnson"],
+    "technologies": ["TensorFlow", "Keras", "scikit-learn"],
+    "github_url": "https://github.com/example/movie-review-sentiment"
+  },
+  {
+    "title": "AI Plays Flappy Bird",
+    "description": "A reinforcement learning agent that learns to play the game Flappy Bird using the NEAT (NeuroEvolution of Augmenting Topologies) algorithm.",
+    "members": ["Chris Lee", "Sarah Green"],
+    "technologies": ["Python", "NEAT-Python"],
+    "github_url": "https://github.com/example/flappy-bird-ai"
+  }
+]
