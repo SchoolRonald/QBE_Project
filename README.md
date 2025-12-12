@@ -1,6 +1,6 @@
-# Mines AI & Machine Learning Club — Site (Svelte)
+# QBE Project — Lac Operon Website (Svelte) 
 
-Modern single-page site for the Colorado School of Mines AI & ML Club, built with Svelte. This project was built mostly using LLM's. 
+Single-page educational website explaining the lac operon and basic principles of prokaryotic gene regulation, built with Svelte. The site is designed to help students visualize how the lac operon turns gene expression on and off in response to lactose and glucose.
 
 ## Quick start
 
