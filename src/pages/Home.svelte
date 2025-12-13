@@ -88,9 +88,9 @@
     </div>
 
     <div class="feature-card surface-card">
-      <img src="/QBE_Project/networking.jpg" alt="Interactive Visualizations" class="feature-image" />
+      <img src="/QBE_Project/networking.jpg" alt="Model Visualizations" class="feature-image" />
       <div class="feature-content">
-        <h3>Interactive Visualization</h3>
+        <h3>Model Visualization</h3>
         <p>
           Explore scenarios such as “no lactose”, “lactose present”, and
           “mutations” using interactive diagrams and state visualizations.
