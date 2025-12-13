@@ -6,7 +6,7 @@
 <section class="page-shell">
   <PageHeader 
     title="Model" 
-    subtitle="Mathematical modeling of the lac operon using delayed differential equations"
+    subtitle="Mathematical modeling of the <em>lac operon</em> using delayed differential equations"
   />
 
   <div class="content surface-card">
@@ -16,7 +16,7 @@
       <p>
         We chose a model of three differential equations from Yildirim et al.<sup>3</sup> This model utilizes delay differential 
         equations, for which the DEs depend on both the previous and the current values of the equation. This is necessary because 
-        there are delays associated with the transcription and translation of the lac operon.
+        there are delays associated with the transcription and translation of the <em>lac operon</em>.
       </p>
 
       <h4>Model Variables</h4>
@@ -66,7 +66,7 @@
     <div class="section">
       <SectionHeader title="Dependence on β-galactosidase (B) Concentration" />
       <p>
-        The activation of the lac operon is strictly dependent on the concentration of Beta-galactosidase (B), as illustrated by 
+        The activation of the <em>lac operon</em> is strictly dependent on the concentration of Beta-galactosidase (B), as illustrated by 
         the phase plane plot. This projection reveals a critical mathematical tipping point determined by the balance between 
         allolactose (A) and enzyme levels. Below this threshold, the enzyme concentration is insufficient to generate the allolactose 
         (A) required to sustain induction, causing the system to collapse back to the uninduced "off" state. Conversely, when the 
@@ -112,7 +112,7 @@
     <div class="section">
       <SectionHeader title="Conclusions" />
       <p>
-        This computational model demonstrates how the lac operon exhibits bistable behavior, allowing <em>E. coli</em> to maintain 
+        This computational model demonstrates how the <em>lac operon</em> exhibits bistable behavior, allowing <em>E. coli</em> to maintain 
         distinct metabolic states. The mathematical framework using delayed differential equations captures essential biological 
         dynamics including transcriptional and translational delays. The critical dependence on β-galactosidase concentration reveals 
         how enzymatic feedback loops enable cellular decision-making. These findings illustrate fundamental principles of gene 

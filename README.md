@@ -1,6 +1,6 @@
-# QBE Project — Lac Operon Website (Svelte) 
+# QBE Project — *Lac Operon* Website (Svelte) 
 
-Single-page educational website explaining the lac operon and basic principles of prokaryotic gene regulation, built with Svelte. The site is designed to help students visualize how the lac operon turns gene expression on and off in response to lactose and glucose.
+Single-page educational website explaining the *lac operon* and basic principles of prokaryotic gene regulation, built with Svelte. The site is designed to help students visualize how the *lac operon* turns gene expression on and off in response to lactose and glucose.
 
 ## Quick start
 

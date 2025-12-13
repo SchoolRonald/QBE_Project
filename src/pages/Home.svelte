@@ -6,9 +6,9 @@
   <div class="hero-grid surface-card">
     <div class="hero-text">
       <span class="badge hero-badge">QBE Project</span>
-      <h1>Lac Operon Learning Hub</h1>
+      <h1><em>Lac Operon</em> Learning Hub</h1>
       <p class="lead">
-        An interactive site that explains how the lac operon works, from basic biology
+        An interactive site that explains how the <em>lac operon</em> works, from basic biology
         to computational models and visualizations of gene regulation.
       </p>
 
@@ -70,7 +70,7 @@
       <div class="feature-content">
         <h3>Biological Background</h3>
         <p>
-          Walk through the structure of the lac operon, its genes, and the key
+          Walk through the structure of the <em>lac operon</em>, its genes, and the key
           molecules that turn transcription on and off.
         </p>
       </div>
@@ -81,7 +81,7 @@
       <div class="feature-content">
         <h3>Computational Model</h3>
         <p>
-          See how the lac operon can be described with logical rules or quantitative
+          See how the <em>lac operon</em> can be described with logical rules or quantitative
           models that connect inputs to gene expression.
         </p>
       </div>
@@ -102,7 +102,7 @@
   <div class="mission-section surface-card">
     <h2>Project Aim</h2>
     <p class="mission-text">
-      This QBE project uses the lac operon as a concrete example of bacterial gene
+      This QBE project uses the <em>lac operon</em> as a concrete example of bacterial gene
       regulation. The goal is to connect molecular biology, mathematical modeling,
       and interactive visualization so that students can experiment with different
       conditions and immediately see their effects on gene expression.

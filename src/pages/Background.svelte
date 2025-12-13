@@ -6,7 +6,7 @@
 <section class="page-shell">
   <PageHeader 
     title="Background" 
-    subtitle="Understanding the lac operon and gene regulatory circuits"
+    subtitle="Understanding the <em>lac operon</em> and gene regulatory circuits"
   />
 
   <div class="content surface-card">
@@ -18,13 +18,13 @@
         developing applications in biotechnology, and facilitating advances in medicine by elucidating disease mechanisms.<sup>1</sup>
         Gene regulatory circuits are often modeled mathematically with systems of differential equations to gain a better 
         understanding of how complex factors influence gene expression.<sup>1</sup> Modeling a simple gene regulatory circuit, 
-        such as the regulation of the lac operon in <em>E. coli</em>, can aid in the understanding of how more complex gene 
+        such as the regulation of the <em>lac operon</em> in <em>E. coli</em>, can aid in the understanding of how more complex gene 
         regulatory circuits function.
       </p>
 
-      <h4>The Lac Operon Structure</h4>
+      <h4>The <em>lac operon</em> Structure</h4>
       <p>
-        The structural genes of the lac operon are involved in the metabolism of lactose and include:
+        The structural genes of the <em>lac operon</em> are involved in the metabolism of lactose and include:
       </p>
       <ul>
         <li><strong>lac Z</strong> — codes for β-galactosidase (an enzyme that breaks lactose into glucose and galactose for further metabolism)</li>
@@ -40,7 +40,7 @@
         <div class="placeholder-image">
           <img src="/QBE_Project/lac-operon-diagram.jpg" alt="Lac operon structure in E. coli" />
         </div>
-        <figcaption>A representation of the lac operon in <em>E. coli</em></figcaption>
+        <figcaption>A representation of the <em>lac operon</em> in <em>E. coli</em></figcaption>
       </figure>
     </div>
 
@@ -48,7 +48,7 @@
     <div class="section">
       <SectionHeader title="Methods" />
       <p>
-        To model the lac operon, the delays due to transcription (τ<sub>M</sub>) and translation (τ<sub>B</sub>) had to be 
+        To model the <em>lac operon</em>, the delays due to transcription (τ<sub>M</sub>) and translation (τ<sub>B</sub>) had to be 
         accounted for within the numerical integration tool used to solve the system of three equations. Numerical solvers for 
         systems of ordinary differential equations imported from SciPy such as <code>odeint</code> would not be sufficient to 
         address the problem. To consider the model properly as a delayed differential equation (DDE), the import <code>ddeint</code> 
@@ -93,7 +93,7 @@
       <ol class="references">
         <li>M. Gómez-Schiavon et al., The art of modeling gene regulatory circuits, <em>npj Syst. Biol. Appl.</em> <strong>2024</strong>, 10</li>
         <li>F. Jacob, J. Monod, Gene regulatory mechanisms in the synthesis of proteins, <em>J. Mol. Biol.</em> <strong>1961</strong>, 3, 3, 318-356</li>
-        <li>N. Yildirim et al., Dynamics and bistability in a reduced model of the lac operon, <em>Chaos</em>. <strong>2004</strong>, 14, 2, 279-292</li>
+        <li>N. Yildirim et al., Dynamics and bistability in a reduced model of the <em>lac operon</em>, <em>Chaos</em>. <strong>2004</strong>, 14, 2, 279-292</li>
       </ol>
     </div>
 
