@@ -78,6 +78,27 @@
         The (μ + γ)A term models the loss of allolactose from the reverse reaction, where β-galactosidase catalyzes the reaction 
         to form glucose and galactose from allolactose.
       </p>
+
+      <h4>Challenges & Solutions</h4>
+      <p>During our modeling work, we encountered and resolved several technical issues:</p>
+      <table class="solutions-table">
+        <thead>
+          <tr>
+            <th>Model Issue</th>
+            <th>Solution(s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Extremely quick allolactose kinetics compared to other concentrations leading to uncharacteristic spikes</td>
+            <td>Reduced dt</td>
+          </tr>
+          <tr>
+            <td>Negative concentrations resulting in poor references and unrealistic results</td>
+            <td>Refined data before presentation, by setting negative values close to zero to zero; References to previous time values would select zero if greater than the concentration</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Beta-galactosidase Dependence -->
@@ -265,6 +286,35 @@
     font-style: italic;
   }
 
+  .solutions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-medium);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .solutions-table th {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 1rem;
+    text-align: left;
+    color: var(--accent-bright);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-accent);
+  }
+
+  .solutions-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-medium);
+    color: var(--text);
+  }
+
+  .solutions-table tr:last-child td {
+    border-bottom: none;
+  }
+
   @media (max-width: 768px) {
     .content {
       padding: 1.5rem;
@@ -272,6 +322,15 @@
 
     .placeholder-image {
       min-height: 200px;
+    }
+
+    .solutions-table {
+      font-size: 0.9rem;
+    }
+
+    .solutions-table th,
+    .solutions-table td {
+      padding: 0.75rem;
     }
   }
 
