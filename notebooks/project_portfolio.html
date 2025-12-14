@@ -8009,8 +8009,8 @@ $$<p>Where these are delay differential equations (discrete time delays are due 
 <span class="n">dt</span> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="n">t_span</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">ti</span><span class="p">,</span> <span class="n">tf</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
 
-<span class="c1"># --- Run 1: Converge to SS1 (Low State) ---</span>
-<span class="c1"># We start M and A at their SS1 values, but B *below* the 1.2 nM tipping point [cite: 312, 313]</span>
+<span class="c1"># Run 1: Converge to SS1 (Low State)</span>
+<span class="c1">#we start M and A at their SS1 values, but B below the 1.2 nM tipping point [cite: 312, 313]</span>
 <span class="n">M_0_low</span> <span class="o">=</span> <span class="mf">0.46e-9</span>  <span class="c1"># SS1 M</span>
 <span class="n">B_0_low</span> <span class="o">=</span> <span class="mf">1.0e-9</span>   <span class="c1"># B &lt; 1.2e-9 threshold</span>
 <span class="n">A_0_low</span> <span class="o">=</span> <span class="mf">4.27e-6</span>  <span class="c1"># SS1 A</span>
@@ -8018,8 +8018,8 @@ $$<p>Where these are delay differential equations (discrete time delays are due 
 
 <span class="n">sol_low</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">ddeint</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">history</span><span class="p">,</span> <span class="n">t_span</span><span class="p">,</span> <span class="n">fargs</span><span class="o">=</span><span class="n">params</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
 
-<span class="c1"># --- Run 2: Converge to SS3 (High State) ---</span>
-<span class="c1"># We start M and A at their SS1 values, but B *above* the 1.2 nM tipping point [cite: 312, 319]</span>
+<span class="c1">#Run 2: Converge to SS3 (High State)</span>
+<span class="c1"># We start M and A at their SS1 values, but B above the 1.2 nM tipping point [cite: 312, 319]</span>
 <span class="n">M_0_high</span> <span class="o">=</span> <span class="mf">0.46e-9</span>  <span class="c1"># SS1 M</span>
 <span class="n">B_0_high</span> <span class="o">=</span> <span class="mf">1.5e-9</span>   <span class="c1"># B &gt; 1.2e-9 threshold</span>
 <span class="n">A_0_high</span> <span class="o">=</span> <span class="mf">4.27e-6</span>  <span class="c1"># SS1 A</span>
@@ -8031,7 +8031,7 @@ $$<p>Where these are delay differential equations (discrete time delays are due 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">'Bistability: Convergence Depends on Initial B Concentration'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 
-<span class="c1"># --- Plot M ---</span>
+<span class="c1">#plot M</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_span</span><span class="p">,</span> <span class="n">sol_high</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Start B = 1.5 nM (→ High State)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_span</span><span class="p">,</span> <span class="n">sol_low</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Start B = 1.0 nM (→ Low State)'</span><span class="p">)</span>
@@ -8040,18 +8040,18 @@ $$<p>Where these are delay differential equations (discrete time delays are due 
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">0.46e-9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">':'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'SS1 (Low State)'</span><span class="p">)</span>   <span class="c1"># SS1 M [cite: 308]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
-<span class="c1"># --- Plot B ---</span>
+<span class="c1">#plot B</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_span</span><span class="p">,</span> <span class="n">sol_high</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Start B = 1.5 nM'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_span</span><span class="p">,</span> <span class="n">sol_low</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Start B = 1.0 nM'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'B Concentration (M)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">16.42e-9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'SS3 (High State)'</span><span class="p">)</span> <span class="c1"># SS3 B [cite: 309]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">0.23e-9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">':'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'SS1 (Low State)'</span><span class="p">)</span>   <span class="c1"># SS1 B [cite: 308]</span>
-<span class="c1"># Use log scale to match Figure 6 in the paper [cite: 318]</span>
+<span class="c1">#use log scale to match Figure 6 in the paper [cite: 318]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
-<span class="c1"># --- Plot A ---</span>
+<span class="c1">#plot A</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_span</span><span class="p">,</span> <span class="n">sol_high</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Start B = 1.5 nM'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_span</span><span class="p">,</span> <span class="n">sol_low</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Start B = 1.0 nM'</span><span class="p">)</span>
