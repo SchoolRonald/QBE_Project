@@ -1,12 +1,13 @@
 <script>
   import PageHeader from '../components/PageHeader.svelte';
   import SectionHeader from '../components/SectionHeader.svelte';
+  import { ROUTES } from '../config/constants';
 </script>
 
 <section class="page-shell">
   <PageHeader 
     title="Background" 
-    subtitle="Understanding the <em>lac operon</em> and gene regulatory circuits"
+    subtitle="Understanding the <em>lac</em> operon and gene regulatory circuits"
   />
 
   <div class="content surface-card">
@@ -14,22 +15,22 @@
     <div class="section">
       <SectionHeader title="Introduction" />
       <p>
-        Understanding gene regulatory circuits is crucial to the advancement of the knowledge of the fundamentals of life, 
+        Understanding gene regulatory circuits is key to the advancement of the knowledge of the fundamentals of life, 
         developing applications in biotechnology, and facilitating advances in medicine by elucidating disease mechanisms.<sup>1</sup>
         Gene regulatory circuits are often modeled mathematically with systems of differential equations to gain a better 
         understanding of how complex factors influence gene expression.<sup>1</sup> Modeling a simple gene regulatory circuit, 
-        such as the regulation of the <em>lac operon</em> in <em>E. coli</em>, can aid in the understanding of how more complex gene 
+        such as the regulation of the <em>lac</em> operon in <em>E. coli</em>, can aid in the understanding of how more complex gene 
         regulatory circuits function.
       </p>
 
-      <h4>The <em>lac operon</em> Structure</h4>
+      <h4>The <em>lac</em> operon Structure</h4>
       <p>
-        The structural genes of the <em>lac operon</em> are involved in the metabolism of lactose and include:
+        The structural genes of the <em>lac</em> operon are involved in the metabolism of lactose and include:
       </p>
       <ul>
-        <li><strong>lac Z</strong> — codes for β-galactosidase (an enzyme that breaks lactose into glucose and galactose for further metabolism)</li>
-        <li><strong>lac Y</strong> — encodes a lactose permease</li>
-        <li><strong>lac A</strong> — encodes a transacetylase</li>
+        <li><em>lacZ</em> — codes for β-galactosidase (an enzyme that breaks lactose into glucose and galactose for further metabolism)</li>
+        <li><em>lacY</em> — encodes a lactose permease</li>
+        <li><em>lacA</em> — encodes a transacetylase</li>
       </ul>
       <p>
         To conserve resources, the cell does not transcribe these genes at all until lactose is present and does not quickly 
@@ -40,7 +41,7 @@
         <div class="placeholder-image">
           <img src="/QBE_Project/lac-operon-diagram.jpg" alt="Lac operon structure in E. coli" />
         </div>
-        <figcaption>A representation of the <em>lac operon</em> in <em>E. coli</em></figcaption>
+        <figcaption>A representation of the <em>lac</em> operon in <em>E. coli</em></figcaption>
       </figure>
     </div>
 
@@ -48,7 +49,7 @@
     <div class="section">
       <SectionHeader title="Methods" />
       <p>
-        To model the <em>lac operon</em>, the delays due to transcription (τ<sub>M</sub>) and translation (τ<sub>B</sub>) had to be 
+        To model the <em>lac</em> operon, the delays due to transcription (τ<sub>M</sub>) and translation (τ<sub>B</sub>) had to be 
         accounted for within the numerical integration tool used to solve the system of three equations. Numerical solvers for 
         systems of ordinary differential equations imported from SciPy such as <code>odeint</code> would not be sufficient to 
         address the problem. To consider the model properly as a delayed differential equation (DDE), the import <code>ddeint</code> 
@@ -85,24 +86,9 @@
       <p>
         Once these issues were resolved, the three variables could be plotted against each other or against time to complete the model.
       </p>
-    </div>
-
-    <!-- References -->
-    <div class="section">
-      <SectionHeader title="References" />
-      <ol class="references">
-        <li>M. Gómez-Schiavon et al., The art of modeling gene regulatory circuits, <em>npj Syst. Biol. Appl.</em> <strong>2024</strong>, 10</li>
-        <li>F. Jacob, J. Monod, Gene regulatory mechanisms in the synthesis of proteins, <em>J. Mol. Biol.</em> <strong>1961</strong>, 3, 3, 318-356</li>
-        <li>N. Yildirim et al., Dynamics and bistability in a reduced model of the <em>lac operon</em>, <em>Chaos</em>. <strong>2004</strong>, 14, 2, 279-292</li>
-      </ol>
-    </div>
-
-    <!-- Acknowledgements -->
-    <div class="section">
-      <SectionHeader title="Acknowledgements" />
-      <p>We gratefully acknowledge Dr. Beeler for guidance and support throughout this project. We also thank James Slopey for providing the template for this website.</p>
-    </div>
   </div>
+
+  <p class="references-note">See <a class="pill-link" href="#/model#references">References</a> and <a class="pill-link" href="#/model#acknowledgements">Acknowledgements</a> on the Model page for full citations and credits.</p>
 </section>
 
 <style>
@@ -132,7 +118,7 @@
     margin: 1rem 0;
   }
 
-  ul, ol {
+  ul {
     color: var(--text);
     line-height: 1.8;
     margin: 1rem 0;
@@ -141,11 +127,6 @@
 
   li {
     margin-bottom: 0.5rem;
-  }
-
-  strong {
-    color: var(--text-bright);
-    font-weight: 600;
   }
 
   em {
@@ -227,12 +208,26 @@
     border-bottom: none;
   }
 
-  .references {
-    list-style: decimal;
+  .references-note {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0 3rem 2rem;
   }
 
-  .references li {
-    margin-bottom: 1rem;
+  .pill-link {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(255, 215, 0, 0.15);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .pill-link:hover {
+    background: rgba(255, 215, 0, 0.3);
+    color: var(--text-bright);
   }
 
   @media (max-width: 768px) {

@@ -1,12 +1,32 @@
 <script>
+  import { onMount } from 'svelte';
   import PageHeader from '../components/PageHeader.svelte';
   import SectionHeader from '../components/SectionHeader.svelte';
+  import { ROUTES } from '../config/constants';
+
+  const equations = `$$ \\begin{align} \\frac{d\\mathrm{M}}{d\\mathrm{t}} &= \\alpha_{M}\\frac{1 + K_{1}(\\mathrm{e}^{-\\mu\\tau_{M}}A_{\\tau_M})^n}{K + K_{1}(\\mathrm{e}^{-\\mu\\tau_{M}}A_{\\tau_M})^n} - \\tilde{\\gamma}_{M} M \\tag{1} \\\\ \\frac{d\\mathrm{B}}{d\\mathrm{t}} &= \\alpha_{B} \\mathrm{e}^{-\\mu \\tau_{B}} M_{\\tau_B} - \\tilde{\\gamma}_{B} B \\tag{2} \\\\ \\frac{d\\mathrm{A}}{d\\mathrm{t}} &= \\alpha_{A} B \\frac{L}{K_{L} + L} - \\beta_{A} B \\frac{A}{K_{A} + A} - \\tilde{\\gamma}_{A} A \\tag{3} \\end{align} $$`;
+  
+  onMount(() => {
+    if (window.MathJax) {
+      window.MathJax.typesetPromise();
+    }
+    const hash = window.location.hash || '';
+    const parts = hash.split('#');
+    const anchor = parts[2] || null;
+    if (anchor) {
+      const el = document.getElementById(anchor);
+      if (el) {
+        // allow Svelte to render before scrolling
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 0);
+      }
+    }
+  });
 </script>
 
 <section class="page-shell">
   <PageHeader 
     title="Model" 
-    subtitle="Mathematical modeling of the <em>lac operon</em> using delayed differential equations"
+    subtitle="Mathematical modeling of the <em>lac</em> operon using delayed differential equations"
   />
 
   <div class="content surface-card">
@@ -15,8 +35,11 @@
       <SectionHeader title="Three-Variable DDE Model" />
       <p>
         We chose a model of three differential equations from Yildirim et al.<sup>3</sup> This model utilizes delay differential 
-        equations, for which the DEs depend on both the previous and the current values of the equation. This is necessary because 
-        there are delays associated with the transcription and translation of the <em>lac operon</em>.
+        equations (DDEs), which explicitly account for time delays in biological processes. In the <em>lac</em> operon, transcription and 
+        translation are not instantaneous, so the current production of mRNA and β-galactosidase depends on concentrations at earlier times.
+      </p>
+      <p>
+        Below we present the three-variable DDE system used in our analysis and discuss each term in biological context.
       </p>
 
       <h4>Model Variables</h4>
@@ -28,12 +51,8 @@
       </ul>
 
       <h4>The Three-Variable DDE System</h4>
-      <div class="equation-block">
-        <p class="equation-text">
-          dM/dt = α(A/(K + A)) · exp(-τ<sub>M</sub>) - γ̃<sub>M</sub>M<br/>
-          dB/dt = βM(t - τ<sub>B</sub>) - γ̃<sub>B</sub>B<br/>
-          dA/dt = κB - (μ + γ)A
-        </p>
+      <div class="math">
+        {@html equations}
       </div>
 
       <h4>Key Parameters</h4>
@@ -49,8 +68,7 @@
 
       <h4>Model Terms</h4>
       <p>
-        The M(t - τ<sub>B</sub>) term models the increase in β-galactosidase concentration from translation from mRNA while 
-        accounting for the time-delay in transcription.
+        The term M(t − τ<sub>B</sub>) captures that β-galactosidase synthesis at time t depends on prior mRNA levels after a translation delay τ<sub>B</sub>.
       </p>
       <p>
         The κB term models the production of allolactose from the reaction catalyzed by β-galactosidase to produce allolactose 
@@ -66,7 +84,7 @@
     <div class="section">
       <SectionHeader title="Dependence on β-galactosidase (B) Concentration" />
       <p>
-        The activation of the <em>lac operon</em> is strictly dependent on the concentration of Beta-galactosidase (B), as illustrated by 
+        The activation of the <em>lac</em> operon is strictly dependent on the concentration of Beta-galactosidase (B), as illustrated by 
         the phase plane plot. This projection reveals a critical mathematical tipping point determined by the balance between 
         allolactose (A) and enzyme levels. Below this threshold, the enzyme concentration is insufficient to generate the allolactose 
         (A) required to sustain induction, causing the system to collapse back to the uninduced "off" state. Conversely, when the 
@@ -112,14 +130,37 @@
     <div class="section">
       <SectionHeader title="Conclusions" />
       <p>
-        This computational model demonstrates how the <em>lac operon</em> exhibits bistable behavior, allowing <em>E. coli</em> to maintain 
-        distinct metabolic states. The mathematical framework using delayed differential equations captures essential biological 
-        dynamics including transcriptional and translational delays. The critical dependence on β-galactosidase concentration reveals 
-        how enzymatic feedback loops enable cellular decision-making. These findings illustrate fundamental principles of gene 
-        regulation applicable to more complex biological systems.
+        The delayed differential equation model representing the gene regulatory circuit for the <em>lac</em> operon in <em>E. coli</em>, developed by 
+        Yildirim et al.<sup>3</sup>, was successfully integrated using <code>ddeint</code> and visualized across diverse initial conditions. This analysis 
+        revealed bistability: the circuit "turns on" when sufficient lactose is present to be metabolized and "turns off" when lactose is 
+        absent, conserving resources. This highlights that the <em>lac</em> operon acts like a genetic switch: its transcriptional state 
+        depends on environmental inputs and system history. This workflow can be repeated to investigate more complex regulatory systems, including those in 
+        complex eukaryotes, to gain insights into gene expression mechanisms.
+      </p>
+      <h4>Next Steps</h4>
+      <p>
+        To further validate that this model accurately captures the <em>lac</em> operon gene regulatory circuit, experimental data could be collected by 
+        measuring <em>lac</em> operon mRNA transcripts over time under varying initial lactose levels and comparing results to model predictions. A similar 
+        modeling approach could be extended to more complex circuits—such as those in eukaryotes—to improve our understanding of cell cycle regulation, cell 
+        differentiation, cell–cell and cell–environment interactions, and disease mechanisms.<sup>1</sup>
       </p>
     </div>
+
+    <div class="section" id="references">
+      <SectionHeader title="References" />
+      <ol class="references">
+        <li>M. Gómez-Schiavon et al., The art of modeling gene regulatory circuits, <em>npj Syst. Biol. Appl.</em> <strong>2024</strong>, 10</li>
+        <li>F. Jacob, J. Monod, Gene regulatory mechanisms in the synthesis of proteins, <em>J. Mol. Biol.</em> <strong>1961</strong>, 3, 3, 318-356</li>
+        <li>N. Yildirim et al., Dynamics and bistability in a reduced model of the <em>lac</em> operon, <em>Chaos</em>. <strong>2004</strong>, 14, 2, 279-292</li>
+      </ol>
+    </div>
+
+    <div class="section" id="acknowledgements">
+      <SectionHeader title="Acknowledgements" />
+      <p>We gratefully acknowledge Dr. Beeler for guidance and support throughout this project. We also thank James Slopey for providing the template for this website.</p>
+    </div>
   </div>
+
 </section>
 
 <style>
@@ -156,6 +197,16 @@
     padding-left: 2rem;
   }
 
+  .references {
+    list-style: decimal;
+    padding-left: 2rem;
+  }
+
+  .references li {
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
   li {
     margin-bottom: 0.5rem;
   }
@@ -181,19 +232,8 @@
     vertical-align: sub;
   }
 
-  .equation-block {
-    background: rgba(0, 206, 209, 0.06);
-    border-left: 4px solid var(--cyan);
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 1.5rem 0;
-  }
-
-  .equation-text {
-    font-family: 'Courier New', monospace;
-    color: var(--cyan-bright);
-    line-height: 2;
-    margin: 0;
+  .math {
+    margin: 1rem 0;
   }
 
   .figure {
@@ -230,12 +270,9 @@
       padding: 1.5rem;
     }
 
-    .equation-block {
-      padding: 1rem;
-    }
-
     .placeholder-image {
       min-height: 200px;
     }
   }
+
 </style>

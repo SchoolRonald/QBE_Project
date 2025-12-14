@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import PageHeader from '../components/PageHeader.svelte';
+  import { ROUTES } from '../config/constants';
 
   // ✅ Updated paths for GitHub Pages with base: '/QBE_Project/'
   const CANDIDATES = [
@@ -61,6 +62,8 @@
       </div>
     {/if}
   </div>
+
+  <p class="references-note">See <a class="pill-link" href="#/model#references">References</a> and <a class="pill-link" href="#/model#acknowledgements">Acknowledgements</a> on the Model page for full citations and contributor credits.</p>
 </section>
 
 <style>
@@ -69,6 +72,8 @@
   .notebook-frame { width:100%; height:800px; border:0; border-radius:10px; background:var(--card); }
   .error .muted { margin:0 0 0.5rem 0; }
   code { background: rgba(255,255,255,0.03); padding:0.1rem 0.4rem; border-radius:4px; }
-  ul { margin: .5rem 0 0 1rem; }
+  .references-note { color: var(--muted); font-size: 0.95rem; margin: 0 1.5rem 2rem; }
+  .pill-link { display:inline-block; padding:0.1rem 0.45rem; border-radius:999px; background:rgba(255,215,0,0.15); color:var(--text); text-decoration:none; font-weight:600; transition:background 0.2s ease, color 0.2s ease; }
+  .pill-link:hover { background:rgba(255,215,0,0.3); color:var(--text-bright); }
   @media (max-width:768px) { .notebook-frame { height:600px } }
 </style>

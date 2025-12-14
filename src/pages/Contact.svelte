@@ -5,7 +5,7 @@
     { name: 'Paul Jacobsen',   major: 'QBE', email: 'pjacobsen@mines.edu' },
     { name: 'Ronald Chu', major: 'QBE and CS', email: 'rchu@mines.edu' },
     { name: 'Camille Anderson', major: 'QBE and Biochemistry', email: 'camille_anderson@mines.edu' },
-    { name: 'Kyle Nguyen',   major: 'QBE Chemical Engineering', email: 'kyle_nguyen@mines.edu' }
+    { name: 'Kyle Nguyen',   major: 'QBE and Chemical Engineering', email: 'kyle_nguyen@mines.edu' }
   ];
 </script>
 

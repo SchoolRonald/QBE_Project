@@ -14,7 +14,7 @@
 <div class="page-header surface-card">
   <h2>{title}</h2>
   {#if subtitle}
-    <p class="subtitle">{subtitle}</p>
+    <p class="subtitle">{@html subtitle}</p>
   {/if}
   <div class="glow-bar" aria-hidden="true"></div>
 </div>

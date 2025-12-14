@@ -6,9 +6,9 @@
   <div class="hero-grid surface-card">
     <div class="hero-text">
       <span class="badge hero-badge">QBE Project</span>
-      <h1><em>Lac Operon</em> Learning Hub</h1>
+      <h1><em>Lac</em> Operon Learning Hub</h1>
       <p class="lead">
-        An interactive site that explains how the <em>lac operon</em> works, from basic biology
+        An interactive site that explains how the <em>lac</em> operon works, from basic biology
         to computational models and visualizations of gene regulation.
       </p>
 
@@ -35,7 +35,7 @@
         </div>
         <div class="stat-card">
           <div class="value">3</div>
-          <div class="label">Core Genes (lacZYA)</div>
+          <div class="label">Core Genes (<em>lacZYA</em>)</div>
         </div>
         <div class="stat-card">
           <div class="value">∞</div>
@@ -66,34 +66,33 @@
 
   <div class="features">
     <div class="feature-card surface-card">
-      <img src="/QBE_Project/training.jpg" alt="Biology Background" class="feature-image" />
+      <img src="/QBE_Project/lac_operon_image_background.jpg" alt="Biology Background" class="feature-image" />
       <div class="feature-content">
         <h3>Biological Background</h3>
         <p>
-          Walk through the structure of the <em>lac operon</em>, its genes, and the key
+          Walk through the structure of the <em>lac</em> operon, its genes, and the key
           molecules that turn transcription on and off.
         </p>
       </div>
     </div>
 
     <div class="feature-card surface-card">
-      <img src="/QBE_Project/competition.jpg" alt="Lac Operon Models" class="feature-image" />
+      <img src="/QBE_Project/computational-model.jpg" alt="Lac Operon Models" class="feature-image" />
       <div class="feature-content">
         <h3>Computational Model</h3>
         <p>
-          See how the <em>lac operon</em> can be described with logical rules or quantitative
+          See how the <em>lac</em> operon can be described with logical rules or quantitative
           models that connect inputs to gene expression.
         </p>
       </div>
     </div>
 
     <div class="feature-card surface-card">
-      <img src="/QBE_Project/networking.jpg" alt="Model Visualizations" class="feature-image" />
+      <img src="/QBE_Project/model-visualization.jpg" alt="Model Visualizations" class="feature-image" />
       <div class="feature-content">
         <h3>Model Visualization</h3>
         <p>
-          Explore scenarios such as “no lactose”, “lactose present”, and
-          “mutations” using interactive diagrams and state visualizations.
+          Explore scenarios such as “no lactose” and “lactose present” by looking at diagrams and state visualizations.
         </p>
       </div>
     </div>
@@ -102,9 +101,9 @@
   <div class="mission-section surface-card">
     <h2>Project Aim</h2>
     <p class="mission-text">
-      This QBE project uses the <em>lac operon</em> as a concrete example of bacterial gene
+      This QBE project uses the <em>lac</em> operon as a concrete example of bacterial gene
       regulation. The goal is to connect molecular biology, mathematical modeling,
-      and interactive visualization so that students can experiment with different
+      and visualization so that students can learn about the effects of different
       conditions and immediately see their effects on gene expression.
     </p>
   </div>
